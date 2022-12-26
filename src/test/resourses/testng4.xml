@@ -8,18 +8,29 @@
 			</listeners>
 	<test name="Test 1">
 		<classes>
+			<class name="testngsession.AddBudget" />
+		</classes>
+	</test>
+	<test name="Test 2">
+		<classes>
+			<class name="testngsession.BudgetTracking" />
+		</classes>
+		
+	</test>
+	<test name="Test 3">
+		<classes>
 			<class name="testngsession.AddShadow" />
 		</classes>
 	</test>
-	
-	<test name="Test 2">
+	<test name="Test 4">
 		<classes>
 			<class name="testngsession.EditShadow" />
 		</classes>
+		
 	</test>
+	
+
 	
 	
 
 </suite>
-
-

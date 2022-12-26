@@ -8,18 +8,13 @@
 			</listeners>
 	<test name="Test 1">
 		<classes>
-			<class name="testngsession.AddShadow" />
+			<class name="Notes.AddNote1" />
 		</classes>
 	</test>
 	
-	<test name="Test 2">
-		<classes>
-			<class name="testngsession.EditShadow" />
-		</classes>
-	</test>
+	
+
 	
 	
 
 </suite>
-
-

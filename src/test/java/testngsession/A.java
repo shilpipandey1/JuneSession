@@ -5,28 +5,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.qa.MRLP.base.baseTest;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class LoginPageTest extends baseTest{
+public class A {
 	
 	WebDriver driver;
 
 	@BeforeTest
 	public void setup() {
 		WebDriverManager.chromedriver().setup();
-		//driver = new ChromeDriver();
-		//driver.navigate().to("url");
-		//String browserName = prop.getProperty("browser");
-		//driver.get(prop.getProperty("url"));
-		//driver.get("http://appdev.mrlp%5Cspandey:1TimeCap%21@fms.appdev.mrlp:82/");
+		driver = new ChromeDriver();
+		driver.get("http://appdev.mrlp%5Cspandey:1TimeCap%21@fms.appdev.mrlp:82/");
 		driver.manage().window().maximize();
 	}
 	
@@ -35,8 +31,7 @@ public class LoginPageTest extends baseTest{
 		
 		driver.switchTo().frame(driver.findElement(By.name("forum123")));
 
-		//driver.findElement(By.id("sFCFileNumber")).sendKeys("19-01650IL");
-		//driver.findElement(By.id("sFCFileNumber")).sendKeys(prop.getProperty("file"));
+		driver.findElement(By.id("sFCFileNumber")).sendKeys("19-01650IL");
 		
 		driver.findElement(By.id("btnSearch")).click();
 		System.out.println("File Search is completed");
@@ -59,9 +54,14 @@ public class LoginPageTest extends baseTest{
 		   driver.findElement(By.xpath("//*[@id=\"popup\"]/div/div[1]/ul/li[1]/span[1]/button")).click();
 			   Thread.sleep(5000);
 		     //driver.findElement(By.xpath("//*[@id='ufd-container']/div[61]/div/div/ul/li[2]")).click();
+		     WebElement java = driver.findElement(By.xpath("//li[.='IL FC Advance']"));
 		     
-			   
-			 driver.findElement(By.xpath("//li[.='IL FC Advance']")).click();
+		     JavascriptExecutor js = (JavascriptExecutor)driver;
+		       
+		        // Call the JavascriptExecutor methods
+		        js.executeScript("arguments[0].click();", java);
+		        
+			// driver.findElement(By.xpath("//li[.='IL FC Advance']")).click();
 			// driver.findElement(By.xpath("//input[@name = 'txtAmount']")).sendKeys("$5.00");
 			// driver.findElement(By.xpath("//input[@name = 'txtQuantity']")).sendKeys("1");
 			 
@@ -100,10 +100,14 @@ public class LoginPageTest extends baseTest{
 			 
 			 Thread.sleep(4000);
 			 driver.findElement(By.xpath("(//span[@title='Edit Charge'])[1]")).click();
-			 driver.findElement(By.xpath("(//div[@id='2_txtComments___livespell_proxy'])[1]")).sendKeys("Test");
-			 Thread.sleep(5000);
-		     driver.findElement(By.xpath("(//span[@class='ui-button-text'][normalize-space()='Save'])[1]")).click();
-		    System.out.println("Edit Charge Passed");
+			 driver.findElement(By.xpath("(//textarea[@id='txtNoExpenseDescription']")).sendKeys("Test");
+//			 
+			 //driver.findElement(By.xpath("(//span[@title='Edit Charge'])[1]")).click();
+						 //driver.findElement(By.cssSelector("(button[class='focus']")).click();
+			// driver.findElement(By.xpath("//*[@id=\"txtNoExpenseDescription\"]")).sendKeys("Test");
+			 Thread.sleep(10000);
+		 driver.findElement(By.xpath("(//span[@class='ui-button-text'][normalize-space()='Save'])[1]")).click();
+		 System.out.println("Edit Charge Passed");
 	 
 //			 Thread.sleep(4000);
 //			 
@@ -116,31 +120,13 @@ public class LoginPageTest extends baseTest{
 //		     System.out.println("Scrolled up..");  
 		     Thread.sleep(5000);
 //			 
-			
-		      driver.findElement(By.xpath("(//span[@title='Delete Line Item'])[1]")).click( );
-		 		
-		     Alert alert2 = driver.switchTo( ).alert( );
-		     String text2 = alert2.getText( );
-		     System.out.println(text2);
-		     alert2.dismiss( );
-			 
-			 //view Line Item History
-		 Thread.sleep(10000);
-		 driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr[1]/td/form/table/tbody/tr[9]/td/table/tbody/tr[3]/td/div/table/tbody/tr/td/div[1]/div[3]/div[3]/div/table/tbody/tr[2]/td[13]/span[2]")).click();			
-		 System.out.println("View Line Item HIstory");
-		 driver.findElement(By.xpath("(//span[@class='ui-button-text'][normalize-space()='x'])[2]")).click();
-		 driver.findElement(By.xpath("//input[@id='Reason']")).sendKeys("Test");
-		 driver.findElement(By.xpath("//button[@id='cleanblue_state0_buttonOk']")).click();
-		 
-			 
-			 
-	}
+	}    
 	
-		
+	
 	
 	@AfterTest
 	public void tearDown() {
+		System.out.println("Test");
 		//driver.quit();
-	}
-
+}
 }

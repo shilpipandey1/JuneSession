@@ -2,24 +2,21 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="TestNG Regression Suite" verbose="4">
+
 <listeners>
 		<listener
 			class-name="Test.com.qa.MRLP.listeners.ExtentReportListener" />
 			</listeners>
+
 	<test name="Test 1">
 		<classes>
-			<class name="testngsession.AddShadow" />
+			<class name="testngsession.MobileHomeTest" />
 		</classes>
-	</test>
-	
-	<test name="Test 2">
-		<classes>
-			<class name="testngsession.EditShadow" />
-		</classes>
+		
+		
+		
 	</test>
 	
 	
 
 </suite>
-
-

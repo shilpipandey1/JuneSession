@@ -2,24 +2,33 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="TestNG Regression Suite" verbose="4">
-<listeners>
+
+	<listeners>
 		<listener
 			class-name="Test.com.qa.MRLP.listeners.ExtentReportListener" />
 			</listeners>
 	<test name="Test 1">
 		<classes>
-			<class name="testngsession.AddShadow" />
+			<class name="FileInfo.AddProductTest" />
 		</classes>
 	</test>
-	
 	<test name="Test 2">
 		<classes>
-			<class name="testngsession.EditShadow" />
+			<class name="FileInfo.ClerkLinkTest" />
+		</classes>
+		
+	</test>
+	<test name="Test 3">
+		<classes>
+			<class name="FileInfo.ViewProductDetail" />
 		</classes>
 	</test>
+	<test name="Test 4">
+		<classes>
+			<class name="FileInfo.ViewWorkFlow" />
+		</classes>
+		
+	</test>
 	
-	
 
-</suite>
-
-
+	</suite>

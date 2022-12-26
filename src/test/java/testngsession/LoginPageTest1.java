@@ -11,32 +11,30 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.qa.MRLP.base.baseTest;
+//import com.qa.MRLP.base.baseTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class LoginPageTest extends baseTest{
+public class LoginPageTest1{
 	
 	WebDriver driver;
 
 	@BeforeTest
 	public void setup() {
 		WebDriverManager.chromedriver().setup();
-		//driver = new ChromeDriver();
-		//driver.navigate().to("url");
-		//String browserName = prop.getProperty("browser");
-		//driver.get(prop.getProperty("url"));
-		//driver.get("http://appdev.mrlp%5Cspandey:1TimeCap%21@fms.appdev.mrlp:82/");
+		driver = new ChromeDriver();
+		//driver.get("url");
+		driver.get("http://appdev.mrlp%5Cspandey:1TimeCap%21@fms.appdev.mrlp:82/");
 		driver.manage().window().maximize();
 	}
 	
 	@Test
-	public void DemoTest() throws InterruptedException {
+	public void InvoiceTest() throws InterruptedException {
 		
 		driver.switchTo().frame(driver.findElement(By.name("forum123")));
 
-		//driver.findElement(By.id("sFCFileNumber")).sendKeys("19-01650IL");
-		//driver.findElement(By.id("sFCFileNumber")).sendKeys(prop.getProperty("file"));
+		driver.findElement(By.id("sFCFileNumber")).sendKeys("19-01650IL");
+		//driver.findElement(By.id("sFCFileNumber")).sendKeys("file");
 		
 		driver.findElement(By.id("btnSearch")).click();
 		System.out.println("File Search is completed");
@@ -44,15 +42,16 @@ public class LoginPageTest extends baseTest{
 		//Assert.assertEquals(flag, true);
 		
 		//Clicking on Invoice screen
-				driver.findElement(By.xpath("//a[normalize-space()='Invoice']")).click();
+		driver.findElement(By.xpath("//a[normalize-space()='Invoice']")).click();
 				
-				//driver.findElement(By.id("//input[@id='txtInvoiceSearch']")).sendKeys("FC-7416344IL");
+		//driver.findElement(By.id("//input[@id='txtInvoiceSearch']")).sendKeys("FC-7416344IL");
 				
-		        Thread.sleep(15000);	
-		         driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='forum123']")));
+		 Thread.sleep(15000);	
+		 driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='forum123']")));
 				
-			    //driver.findElement(By.xpath("(//span[@title='Add'])[1]")).click();
-			    driver.findElement(By.xpath("//*[@id=\"BillingForm\"]/table/tbody/tr[8]/td/h3/span")).click();
+		//driver.findElement(By.xpath("(//span[@title='Add'])[1]")).click();
+		 //Click on Add button
+	    driver.findElement(By.xpath("//*[@id=\"BillingForm\"]/table/tbody/tr[8]/td/h3/span")).click();
 			 
 			    System.out.println("Add Charge pop up opened");
 			
@@ -99,11 +98,12 @@ public class LoginPageTest extends baseTest{
 			 System.out.println("Add Charge Passed");
 			 
 			 Thread.sleep(4000);
-			 driver.findElement(By.xpath("(//span[@title='Edit Charge'])[1]")).click();
-			 driver.findElement(By.xpath("(//div[@id='2_txtComments___livespell_proxy'])[1]")).sendKeys("Test");
-			 Thread.sleep(5000);
-		     driver.findElement(By.xpath("(//span[@class='ui-button-text'][normalize-space()='Save'])[1]")).click();
-		    System.out.println("Edit Charge Passed");
+			// driver.findElement(By.xpath("(//span[@title='Edit Charge'])[1]")).click();
+			// driver.findElement(By.xpath("(//textarea[@id='2_txtComments'])[1]")).sendKeys("Test");
+			// driver.findElement(By.xpath("(//div[@id='2_txtComments___livespell_proxy'])[1]")).sendKeys("Test");
+//			 Thread.sleep(5000);
+//		     driver.findElement(By.xpath("(//span[@class='ui-button-text'][normalize-space()='Save'])[1]")).click();
+//		    System.out.println("Edit Charge Passed");
 	 
 //			 Thread.sleep(4000);
 //			 
